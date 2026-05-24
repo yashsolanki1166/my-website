@@ -4,94 +4,224 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title> Yash Solanki | Portfolio</title>
+  <title>Yash Solanki | Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xp.css@1.0.0/XP.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-<style>
-  body {
-    margin: 0;
-    font-family: "Californian FB", sans-serif;
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    color: #eee;
-  }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-  nav {
-    background-color: rgba(0, 255, 255, 0.1);
-    backdrop-filter: blur(8px);
-    padding: 12px 30px;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.1);
-  }
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
 
-  nav a {
-    color: #00ffff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 18px;
-    transition: all 0.3s ease;
-    text-shadow: 0 0 8px #00ffff66;
-  }
+    body {
+      background: teal url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><rect fill="%23000080" width="4" height="4"/></svg>');
+      font-family: "MS Sans Serif", Arial, sans-serif;
+      font-size: 11px;
+      color: #000;
+    }
 
-  nav a:hover {
-    color: #00e0e0;
-    text-shadow: 0 0 12px #00ffff;
-    transform: scale(1.05);
-  }
+    .taskbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to right, #000080, #1084d7);
+      padding: 2px;
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      z-index: 1000;
+      border-top: 2px solid;
+      border-top-color: #dfdfdf #808080;
+      min-height: 28px;
+    }
 
-  .container {
-    text-align: center;
-    padding: 60px 30px;
-  }
+    .start-button {
+      background: linear-gradient(to right, #c0c0c0, #dfdfdf);
+      border: 2px solid;
+      border-color: #dfdfdf #808080 #808080 #dfdfdf;
+      padding: 2px 6px;
+      font-weight: bold;
+      font-size: 11px;
+      cursor: pointer;
+      font-family: "MS Sans Serif", Arial, sans-serif;
+    }
 
-  .profile-img {
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #00ffff;
-    box-shadow: 0 0 30px #00ffff50;
-    margin-top: 30px;
-    transition: transform 0.4s ease;
-  }
+    .start-button:active {
+      border-color: #808080 #dfdfdf #dfdfdf #808080;
+    }
 
-  .profile-img:hover {
-    transform: scale(1.05);
-  }
+    .nav-container {
+      display: flex;
+      gap: 10px;
+      flex: 1;
+      margin-left: 10px;
+    }
 
-  h1 {
-    font-size: 40px;
-    color: #00ffff;
-    margin: 30px 0 10px;
-    text-shadow: 0 0 10px #00ffff80;
-  }
+    .window {
+      background: linear-gradient(to right, #000080, #1084d7);
+      border: 2px solid;
+      border-color: #dfdfdf #808080 #808080 #dfdfdf;
+      margin: 20px auto;
+      max-width: 700px;
+      width: calc(100% - 40px);
+      margin-bottom: 80px;
+      box-shadow: 1px 1px 0 #ffffff, -1px -1px 0 #404040;
+    }
 
-  p {
-    font-size: 18px;
-    max-width: 700px;
-    margin: 20px auto;
-    line-height: 1.7;
-    color: #ccc;
-    text-shadow: 0 0 5px rgba(0, 255, 255, 0.05);
-  }
-</style>
+    .title-bar {
+      background: linear-gradient(to right, #000080, #1084d7);
+      color: #ffffff;
+      padding: 2px 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      font-size: 11px;
+      font-family: "MS Sans Serif", Arial, sans-serif;
+    }
 
+    .title-bar-controls {
+      display: flex;
+      gap: 2px;
+    }
+
+    .title-bar-button {
+      background: linear-gradient(to bottom, #c0c0c0, #dfdfdf);
+      border: 2px solid;
+      border-color: #dfdfdf #808080 #808080 #dfdfdf;
+      width: 16px;
+      height: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      cursor: pointer;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .title-bar-button:active {
+      border-color: #808080 #dfdfdf #dfdfdf #808080;
+    }
+
+    .window-content {
+      background: #c0c0c0;
+      padding: 20px;
+      border: 1px solid;
+      border-color: #ffffff #808080 #808080 #ffffff;
+    }
+
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 0;
+      object-fit: cover;
+      border: 2px solid;
+      border-color: #dfdfdf #808080 #808080 #dfdfdf;
+      margin: 20px auto;
+      display: block;
+      background: #c0c0c0;
+    }
+
+    .window h1 {
+      font-size: 14px;
+      color: #000080;
+      margin: 20px 0 10px;
+      text-align: center;
+      font-weight: bold;
+      text-shadow: 1px 1px 0 #ffffff;
+    }
+
+    .window p {
+      font-size: 11px;
+      margin: 10px auto;
+      line-height: 1.6;
+      color: #000;
+      text-align: center;
+    }
+
+    .desktop {
+      padding: 10px;
+      min-height: calc(100vh - 40px);
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      background: linear-gradient(to bottom, #c0c0c0, #dfdfdf);
+      border: 2px solid;
+      border-color: #dfdfdf #808080 #808080 #dfdfdf;
+      padding: 4px 12px;
+      text-decoration: none;
+      color: #000;
+      font-family: "MS Sans Serif", Arial, sans-serif;
+      font-size: 11px;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-links a:active {
+      border-color: #808080 #dfdfdf #dfdfdf #808080;
+    }
+  </style>
 </head>
 <body>
 
+  <div class="desktop">
+    <!-- Main Window -->
+    <div class="window animate__animated animate__fadeIn">
+      <div class="title-bar">
+        <span>My Portfolio.exe</span>
+        <div class="title-bar-controls">
+          <div class="title-bar-button">_</div>
+          <div class="title-bar-button">□</div>
+          <div class="title-bar-button">✕</div>
+        </div>
+      </div>
+      <div class="window-content">
+        <img src="WhatsApp Image 2025-08-01 at 12.23.41_679ec9ae.jpg" alt="Yash Solanki" class="profile-img animate__animated animate__zoomIn">
+        
+        <h1 class="animate__animated animate__fadeInRight">Greetings everyone! I'm Yash Solanki.</h1>
+        
+        <p class="animate__animated animate__bounceInLeft">
+          Welcome to my portfolio page. I'm a Second-year Undergraduate in Electrical Engineering at Indian Institute of Technology, Gandhinagar. Explore my journey and work through the navigation below!
+        </p>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="project.html">Projects</a>
-    <a href="contacts.html">Contact</a>
-  </nav>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="project.html">Projects</a>
+          <a href="contacts.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- Main Content -->
-  <div class="container animate__animated animate__fadeIn">
-    <img src="WhatsApp Image 2025-08-01 at 12.23.41_679ec9ae.jpg" alt="Yash Solanki" class="profile-img animate__animated animate__zoomIn">
-    <h1 class="animate__animated animate__fadeInRight">Greetings everyone!I'm Yash Solanki.</h1>
-    <p class ="animate__animated animate__bounceInLeft">Welcome to my portfolio page. I'm a Second-year Undergraduate in Electrical Engineering at Indian Institute of Technology, Gandhinagar.Explore my journey and work through the links above!</p>
+  <!-- Taskbar -->
+  <div class="taskbar">
+    <button class="start-button">Start</button>
+    <div class="nav-container">
+      <a style="background: linear-gradient(to bottom, #c0c0c0, #dfdfdf); border: 2px solid; border-color: #dfdfdf #808080 #808080 #dfdfdf; padding: 2px 6px; text-decoration: none; color: #000; font-family: 'MS Sans Serif', Arial, sans-serif; font-size: 11px; display: inline-block; border-color: #808080 #dfdfdf #dfdfdf #808080;" href="index.html">Home</a>
+      <a style="background: linear-gradient(to bottom, #c0c0c0, #dfdfdf); border: 2px solid; border-color: #dfdfdf #808080 #808080 #dfdfdf; padding: 2px 6px; text-decoration: none; color: #000; font-family: 'MS Sans Serif', Arial, sans-serif; font-size: 11px; display: inline-block;" href="about.html">About</a>
+      <a style="background: linear-gradient(to bottom, #c0c0c0, #dfdfdf); border: 2px solid; border-color: #dfdfdf #808080 #808080 #dfdfdf; padding: 2px 6px; text-decoration: none; color: #000; font-family: 'MS Sans Serif', Arial, sans-serif; font-size: 11px; display: inline-block;" href="project.html">Projects</a>
+      <a style="background: linear-gradient(to bottom, #c0c0c0, #dfdfdf); border: 2px solid; border-color: #dfdfdf #808080 #808080 #dfdfdf; padding: 2px 6px; text-decoration: none; color: #000; font-family: 'MS Sans Serif', Arial, sans-serif; font-size: 11px; display: inline-block;" href="contacts.html">Contact</a>
+    </div>
   </div>
 
 </body>
