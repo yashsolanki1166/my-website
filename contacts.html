@@ -1,95 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Yash Solanki</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+    :root {
+      /* Gen X Soft Club Palette */
+      --bg-color: #181a1b; /* Muted dark grey */
+      --nav-bg: rgba(24, 26, 27, 0.85);
+      --panel-bg: #1f2224;
+      --text-main: #cfd6d9;
+      --text-muted: #8b959a;
+      --accent: #7899a6; /* Muted slate blue/teal */
+      --border: #2f3438;
+      --grid-color: rgba(255, 255, 255, 0.02);
+    }
 
-    <title>Contact</title>
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background-color: var(--bg-color);
+      /* Subtle architectural grid */
+      background-image: 
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+      background-size: 50px 50px;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      width: 100%;
+      background-color: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 0;
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 1px;
+      bottom: -6px;
+      left: 0;
+      background-color: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--text-main);
+    }
+
+    nav a:hover::after, nav a.active::after {
+      width: 100%;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 85%;
+      margin: 80px auto 40px;
+      padding: 50px 40px;
+      background: linear-gradient(145deg, var(--panel-bg), transparent);
+      border: 1px solid var(--border);
+      border-radius: 4px; /* Minimalist, structured */
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Technical corner accents typical of late 90s web minimalism */
+    .container::before, .container::after {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border: 1px solid var(--text-muted);
+      opacity: 0.3;
+    }
+    .container::before {
+      top: 15px;
+      left: 15px;
+      border-right: none;
+      border-bottom: none;
+    }
+    .container::after {
+      bottom: 15px;
+      right: 15px;
+      border-left: none;
+      border-top: none;
+    }
+
+    .image-wrapper {
+      padding: 8px;
+      border: 1px solid var(--border);
+      background-color: var(--bg-color);
+      border-radius: 4px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .profile-img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 2px;
+      /* Moody film effect */
+      filter: grayscale(40%) sepia(10%) contrast(1.1); 
+      transition: filter 0.5s ease, transform 0.5s ease;
+      display: block;
+    }
+
+    .image-wrapper:hover .profile-img {
+      filter: grayscale(0%) sepia(0%) contrast(1);
+      transform: scale(1.02);
+    }
+
+    .badge {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 25px;
+      background-color: rgba(120, 153, 166, 0.05);
+    }
+
+    h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 34px;
+      font-weight: 300;
+      color: var(--text-main);
+      margin: 0 0 20px 0;
+      letter-spacing: -0.5px;
+    }
+
+    h1 span {
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 35px;
+      font-weight: 300;
+    }
+
+    .footer-line {
+      width: 40px;
+      height: 1px;
+      background-color: var(--accent);
+      margin: 0 auto;
+      opacity: 0.5;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      nav {
+        gap: 20px;
+        padding: 15px 0;
+      }
+      nav a {
+        font-size: 11px;
+      }
+      .container {
+        padding: 40px 20px;
+      }
+      h1 {
+        font-size: 26px;
+      }
+    }
+  
+.contact-links{display:flex;flex-direction:column;gap:15px;width:100%;max-width:500px}
+.contact-links a{text-decoration:none;color:var(--text-main);border:1px solid var(--border);padding:14px 18px;transition:.3s}
+.contact-links a:hover{color:var(--accent);transform:translateY(-3px)}
+</style>
 </head>
 <body>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    <div class="">
-
-    </div>
-    <style>
-        body {
-            background:linear-gradient(to right, #0f2027, #203a43, #2c5364);
-            margin: 0;
-            color: #eee;
-            font-family: "Californian FB", sans-serif;
-            font-size: 18px;
-            line-height: 1.5;
-
-        }
-
-        nav {
-            background-color: rgba(0, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.1);
-        }
-        nav a {
-            color: white;
-            font-size: 18px;
-            font-weight:600;
-            text-decoration: none;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        h1 {
-            color: black;
-            font-family: "Californian FB", sans-serif;
-            font-size: 24px;
-            text-align: center;
-            padding: 40px 20px 10px;
-        }
-        #contacts {
-          text-align: center;
-          padding: 40px 20px;
-        }
-
-        #contacts a {
-          display: block;
-          margin: 12px auto;
-          width: fit-content;
-          font-size: 20px;
-          font-weight: 600;
-          text-decoration: none;
-          color: #00ffff;
-          background: rgba(0, 255, 255, 0.05);
-          padding: 10px 20px;
-          border-radius: 10px;
-          box-shadow: 0 0 15px #00ffff30;
-          text-shadow: 0 0 8px #00ffff66;
-          transition: all 0.3s ease;
-        }
-
-        #contacts a:hover {
-          color: #00e0e0;
-          background: rgba(0, 255, 255, 0.1);
-          transform: scale(1.05);
-          text-shadow: 0 0 12px #00ffff;
-        }
-
-    </style>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="project.html">Projects</a>
-    <a href="contacts.html">Contact</a>
-  </nav>
-
-<div id="contacts">
-    <a  class="animate__animated animate__backInLeft" href="https://www.linkedin.com/in/yash-solanki-505558320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ">Let's connect on LinkedIn!</a>
-    <a  class="animate__animated animate__fadeInRight" href="mailto:24110349@iitgn.ac.in">My Email</a>
-    <a  class = "animate__animated animate__backInLeft" href="https://github.com/yashsolanki1166">Github</a>
-    <a class="animate__animated animate__fadeInRight" href="https://www.instagram.com/yash__.solanki/">If interested, then you can follow me on Instagram!</a>
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About Me</a>
+<a href="project.html">Projects</a>
+<a href="contacts.html" class="active">Contact</a>
+</nav>
+<main class="container animate__animated animate__fadeInUp">
+<div class="badge">Connect</div>
+<h1>Contact <span>Information</span></h1>
+<p>Feel free to reach out through any of the platforms below.</p>
+<div class="contact-links">
+<a href="mailto:24110349@iitgn.ac.in">Email</a>
+<a href="https://github.com/yashsolanki1166" target="_blank">GitHub</a>
+<a href="https://www.linkedin.com/in/yash-solanki-505558320" target="_blank">LinkedIn</a>
+<a href="https://www.instagram.com/yash__.solanki/" target="_blank">Instagram</a>
 </div>
-
-</body>
-</html>
+<div class="footer-line"></div>
+</main>
+</body></html>
