@@ -1,136 +1,103 @@
-import {
-  WorkContent,
-  WorkFile,
-  WorkType,
-} from "src/types";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yash Solanki | Projects</title>
+  <meta name="description" content="Projects by Yash Solanki.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-// Tech badges for projects
-export const TechIcon = {
-  FPGA: "https://img.shields.io/badge/FPGA-FF6B35?style=for-the-badge&logo=xilinx&logoColor=white",
-  RTL: "https://img.shields.io/badge/RTL-8B4513?style=for-the-badge&logoColor=white",
-  EMBEDDED_SYSTEMS: "https://img.shields.io/badge/Embedded%20Systems-00A4EF?style=for-the-badge&logoColor=white",
-  MACHINE_LEARNING: "https://img.shields.io/badge/Machine%20Learning-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white",
-  EDGE_IMPULSE: "https://img.shields.io/badge/Edge%20Impulse-A535FF?style=for-the-badge&logoColor=white",
-  ARDUINO: "https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white",
-  HARDWARE: "https://img.shields.io/badge/Hardware-2E8B57?style=for-the-badge&logoColor=white",
-  ARM_CORTEX: "https://img.shields.io/badge/ARM%20Cortex-003A70?style=for-the-badge&logo=arm&logoColor=white",
-  C: "https://img.shields.io/badge/C-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white",
-  ASSEMBLY: "https://img.shields.io/badge/Assembly-FF0000?style=for-the-badge&logoColor=white",
-  NETWORKING: "https://img.shields.io/badge/Networking-0078D4?style=for-the-badge&logoColor=white",
-};
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="project.html" class="active">Projects</a>
+    <a href="contacts.html">Contact</a>
+  </nav>
 
-export const WorkData = [
-  {
-    id: 1,
-    title: "ATmega328 Cloning using RISC-V",
-    date: "Jan 2026 - Apr 2026",
-    gitURL: "",
-    techstack: [
-      TechIcon.FPGA,
-      TechIcon.RTL,
-      TechIcon.EMBEDDED_SYSTEMS,
-    ],
-    gallery: [],
-    overview: `Replicated the functionality of the ATmega328 using RISC-V architecture under Prof. Manu Awasthi at IIT Gandhinagar. 
-    Debugged and validated RTL implementations, conducted testing on FPGA platforms, and performed integration testing across modules. 
-    This project deepened my understanding of low-level hardware design and CPU architecture fundamentals.`,
-  },
-  {
-    id: 2,
-    title: "Solar Power Output Predictor",
-    date: "Oct 2025",
-    gitURL: "https://github.com/yashsolanki1166/Solar_power_predictor.git",
-    techstack: [
-      TechIcon.MACHINE_LEARNING,
-      TechIcon.EDGE_IMPULSE,
-    ],
-    gallery: [],
-    overview: `Independently designed an ML model using Edge Impulse to predict solar power output based on geographic coordinates. 
-    Integrated an open-source weather API to collect forecast data and deployed the model end-to-end. This project was created 
-    during the Edge Impulse Hackathon 2025 and demonstrates practical applications of machine learning in renewable energy prediction.`,
-  },
-  {
-    id: 3,
-    title: "Automated Home-Appliance & Security System",
-    date: "Course Project (ES116)",
-    gitURL: "",
-    techstack: [
-      TechIcon.ARDUINO,
-      TechIcon.HARDWARE,
-    ],
-    gallery: [],
-    overview: `Developed an automated home-appliance system and smart security system utilizing the Arduino-UNO microcontroller during 
-    my first year at IIT Gandhinagar. The system integrates sensor inputs, relay controls, and real-time monitoring capabilities 
-    to provide an accessible solution for home automation and security.`,
-  },
-  {
-    id: 4,
-    title: "ARM Cortex Embedded System",
-    date: "Ongoing",
-    gitURL: "",
-    techstack: [
-      TechIcon.ARM_CORTEX,
-      TechIcon.C,
-      TechIcon.ASSEMBLY,
-    ],
-    gallery: [],
-    overview: `Currently working on an advanced embedded systems project focused on the ARM Cortex architecture, developing low-level 
-    implementations and system integrations. This project explores bare-metal programming, interrupt handling, and optimized code 
-    execution on ARM processors.`,
-  },
-  {
-    id: 5,
-    title: "Wi-Fi Channel Monitoring System",
-    date: "Ongoing",
-    gitURL: "",
-    techstack: [
-      TechIcon.NETWORKING,
-      TechIcon.EMBEDDED_SYSTEMS,
-    ],
-    gallery: [],
-    overview: `Building a low-level automatic channel selection and monitoring system for Wi-Fi networks to optimize signal integrity 
-    and connection stability. This involves analyzing channel congestion patterns, interference detection, and implementing intelligent 
-    switching algorithms to improve network performance.`,
-  },
-] as WorkContent[];
+  <main class="container animate__animated animate__fadeInUp">
+    <div class="badge animate__animated animate__fadeInDown animate__delay-1s">Archive & Active</div>
+    
+    <h1 class="animate__animated animate__fadeInUp animate__delay-1s">
+      Selected <span>Projects</span>
+    </h1>
+    
+    <p class="animate__animated animate__fadeInUp animate__delay-1s">
+      A curated collection of my recent work, exploring hardware, software, and systems design.
+    </p>
 
-export const WorkAccordionContent = [
-  {
-    id: 1,
-    type: WorkType.SCHOOL,
-    icon: null,
-    title: "ATmega328 Cloning using RISC-V",
-    content: WorkData[WorkData.findIndex((x) => x.id === 1)],
-  },
-  {
-    id: 2,
-    type: WorkType.PERSONAL,
-    icon: null,
-    title: "Solar Power Output Predictor",
-    content: WorkData[WorkData.findIndex((x) => x.id === 2)],
-  },
-  {
-    id: 3,
-    type: WorkType.SCHOOL,
-    icon: null,
-    title: "Automated Home-Appliance & Security",
-    content: WorkData[WorkData.findIndex((x) => x.id === 3)],
-  },
-  {
-    id: 4,
-    type: WorkType.PERSONAL,
-    icon: null,
-    title: "ARM Cortex Embedded System",
-    content: WorkData[WorkData.findIndex((x) => x.id === 4)],
-  },
-  {
-    id: 5,
-    type: WorkType.PERSONAL,
-    icon: null,
-    title: "Wi-Fi Channel Monitoring System",
-    content: WorkData[WorkData.findIndex((x) => x.id === 5)],
-  },
-] as WorkFile[];
+    <div class="projects-grid animate__animated animate__fadeInUp animate__delay-1s">
+      
+      <!-- Project 1: RISC-V -->
+      <div class="project-card">
+        <div style="font-size: 11px; color: var(--accent); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Jan 2026 - Apr 2026</div>
+        <h3>ATmega328 Cloning using RISC-V</h3>
+        <p>Replicated the functionality of the ATmega328 using RISC-V architecture under Prof. Manu Awasthi at IIT Gandhinagar. Debugged and validated RTL implementations, conducted testing on FPGA platforms, and performed integration testing across modules.</p>
+        <div style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
+          <span style="font-size: 12px; border: 1px solid var(--border); padding: 4px 8px; border-radius: 4px; color: var(--text-muted);">FPGA</span>
+          <span style="font-size: 12px; border: 1px solid var(--border); padding: 4px 8px; border-radius: 4px; color: var(--text-muted);">RTL</span>
+          <span style="font-size: 12px; border: 1px solid var(--border); padding: 4px 8px; border-radius: 4px; color: var(--text-muted);">Embedded Systems</span>
+        </div>
+      </div>
+
+      <!-- Project 2: Solar Power -->
+      <div class="project-card">
+        <div style="font-size: 11px; color: var(--accent); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Oct 2025 • Edge Impulse Hackathon</div>
+        <h3>Solar Power Output Predictor</h3>
+        <p>Independently designed an ML model using Edge Impulse to predict solar power output based on geographic coordinates. Integrated an open-source weather API to collect forecast data and deployed the model end-to-end.</p>
+        <div style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
+          <span style="font-size: 12px; border: 1px solid var(--border); padding: 4px 8px; border-radius: 4px; color: var(--text-muted);">Machine Learning</span>
+          <span style="font-size: 12px; border: 1px solid var(--border); padding: 4px 8px; border-radius: 4px; color: var(--text-muted);">Edge Impulse</span>
+        </div>
+        <div style="display: flex; gap: 15px;">
+          <a href="https://github.com/yashsolanki1166/Solar_power_predictor.git" class="project-link" target="_blank">Repository</a>
+          <a href="https://yashsolanki1166.github.io/Solar_power_predictor/" class="project-link" target="_blank">Live App</a>
+        </div>
+      </div>
+
+      <!-- Project 3: First Year -->
+      <div class="project-card">
+        <div style="font-size: 11px; color: var(--accent); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Course Project (ES116)</div>
+        <h3>Automated Home-Appliance & Security</h3>
+        <p>Developed an automated home-appliance system and smart security system utilizing the Arduino-UNO microcontroller during my first year at IIT Gandhinagar.</p>
+        <div style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
+          <span style="font-size: 12px; border: 1px solid var(--border); padding: 4px 8px; border-radius: 4px; color: var(--text-muted);">Arduino-UNO</span>
+          <span style="font-size: 12px; border: 1px solid var(--border); padding: 4px 8px; border-radius: 4px; color: var(--text-muted);">Hardware</span>
+        </div>
+        <div style="display: flex; gap: 15px;">
+          <a href="https://iitgnacin-my.sharepoint.com/:b:/g/personal/24110349_iitgn_ac_in/EbL92Sp5th1HomqOLx0fOdMBDM-ZzD2olYbpY5ki3B_prg?e=Y4gu9L" class="project-link" target="_blank">Report</a>
+          <a href="https://youtu.be/23HQKJx4GrU?si=7Vbr-AIIQq3Dj8wK" class="project-link" target="_blank">Demo Video</a>
+        </div>
+      </div>
+
+      <!-- Project 4: Ongoing ARM Cortex -->
+      <div class="project-card" style="border-style: dashed;">
+        <div style="font-size: 11px; color: #a69978; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Ongoing</div>
+        <h3>ARM Cortex Embedded System</h3>
+        <p>Currently working on an advanced embedded systems project focused on the ARM Cortex architecture, developing low-level implementations and system integrations.</p>
+        <div style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
+          <span style="font-size: 12px; border: 1px solid var(--border); padding: 4px 8px; border-radius: 4px; color: var(--text-muted);">ARM Cortex</span>
+          <span style="font-size: 12px; border: 1px solid var(--border); padding: 4px 8px; border-radius: 4px; color: var(--text-muted);">C/Assembly</span>
+        </div>
+      </div>
+
+      <!-- Project 5: Ongoing Wi-Fi -->
+      <div class="project-card" style="border-style: dashed;">
+        <div style="font-size: 11px; color: #a69978; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Ongoing</div>
+        <h3>Wi-Fi Channel Monitoring System</h3>
+        <p>Building a low-level automatic channel selection and monitoring system for Wi-Fi networks to optimize signal integrity and connection stability.</p>
+        <div style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
+          <span style="font-size: 12px; border: 1px solid var(--border); padding: 4px 8px; border-radius: 4px; color: var(--text-muted);">Networking</span>
+          <span style="font-size: 12px; border: 1px solid var(--border); padding: 4px 8px; border-radius: 4px; color: var(--text-muted);">Low-Level</span>
+        </div>
+      </div>
+
+    </div>
 
     <div class="footer-line animate__animated animate__fadeIn animate__delay-2s"></div>
   </main>
