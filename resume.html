@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yash Solanki | Resume</title>
+  <meta name="description" content="Resume of Yash Solanki.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="project.html">Projects</a>
+    <a href="resume.html" class="active">Resume</a>
+    <a href="contacts.html">Contact</a>
+  </nav>
+
+  <main class="resume-shell animate__animated animate__fadeInUp">
+    <header class="resume-head">
+      <h1 class="resume-name">Yash Solanki</h1>
+      <div class="resume-lines">
+        <div>Pre-Final year Undergraduate | <a href="mailto:yash.solanki@iitgn.ac.in">yash.solanki@iitgn.ac.in</a></div>
+        <div>Electrical Engineering with Minors in CSE | +91 9875045695</div>
+        <div>
+          IIT Gandhinagar |
+          <a href="https://yashsolanki1166.github.io/my-website/index.html" target="_blank" rel="noopener noreferrer">Portfolio</a> |
+          <a href="https://www.linkedin.com/in/yash-solanki-505558320/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+          <a href="https://github.com/yashsolanki1166" target="_blank" rel="noopener noreferrer">Github</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="resume-section">
+      <h2 class="resume-title">ACADEMIC DETAILS</h2>
+      <table class="resume-table">
+        <thead>
+          <tr>
+            <th>Degree</th>
+            <th>Specialization</th>
+            <th>Institute</th>
+            <th>Year</th>
+            <th>CPI/%</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>B.Tech.</td>
+            <td>Electrical Engineering</td>
+            <td>IIT Gandhinagar</td>
+            <td>2024-Present</td>
+            <td>7.38</td>
+          </tr>
+          <tr>
+            <td>Class XII</td>
+            <td>Physics, Chemistry, Maths</td>
+            <td>Modi School, Rajkot</td>
+            <td>2022-2024</td>
+            <td>83.4%</td>
+          </tr>
+          <tr>
+            <td>Class X</td>
+            <td></td>
+            <td>Saint Xavier's School, Botad</td>
+            <td>2022</td>
+            <td>93.5%</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="resume-section">
+      <h2 class="resume-title">PROJECTS</h2>
+
+      <article class="resume-project">
+        <div class="resume-project-head">
+          <div class="resume-project-name">RISC-V Task Scheduler Simulation | RISC-V assembly, QEMU, Bare-metal C, RTOS Concepts</div>
+          <div class="resume-project-meta">[1 May'26 - 6 July'26]</div>
+        </div>
+        <p class="resume-subline">(Advisor Prof. Jhuma Saha)</p>
+        <ul class="resume-list">
+          <li>Developed a RISC-V task scheduler simulation with round-robin scheduling algorithm and timer interrupt simulation, executed on QEMU-emulated RISC-V hardware, demonstrating context switching across 3 concurrent tasks.</li>
+          <li>Implemented a multi-file bare-metal project with custom linker script, startup assembly, and C code targeting RV32I, by integrating riscv64-unknown-elf-gcc toolchain with QEMU system emulation in a WSL-based cross-compilation environment.</li>
+          <li>Strengthened a RISC-V based embedded systems literature survey with hands-on implementation evidence, by mapping scheduler components (interrupt simulation, memory layout, task switching) to concepts from reviewed research papers on RISC-V embedded architecture and RTOS design.</li>
+        </ul>
+      </article>
+
+      <article class="resume-project">
+        <div class="resume-project-head">
+          <div class="resume-project-name">Neural Network for MNIST Digit Classification using Numpy | Python, NumPy, Deep Learning</div>
+          <div class="resume-project-meta">[June'26]</div>
+        </div>
+        <p class="resume-subline">(Self Project) | <a href="https://github.com/yashsolanki1166/Neural-Network-from-scratch-using-Numpy." target="_blank" rel="noopener noreferrer">Github Link</a></p>
+        <ul class="resume-list">
+          <li>Implemented a feedforward neural network from scratch in Python using NumPy.</li>
+          <li>Developed forward propagation and backpropagation algorithms for digit classification.</li>
+          <li>Trained and evaluated the model on the MNIST handwritten digit dataset.</li>
+          <li>Utilized GitHub Copilot to optimize the code logic and effectively minimize the model's error rate</li>
+          <li>Explored optimization techniques and hyperparameter tuning to improve accuracy and obtained an accuracy of 97.29% over 10 epochs.</li>
+        </ul>
+      </article>
+
+      <article class="resume-project">
+        <div class="resume-project-head">
+          <div class="resume-project-name">Solar Power Predictor ML model | Edge Impulse, API Integration, TinyML, Deployment</div>
+          <div class="resume-project-meta">[Nov'25]</div>
+        </div>
+        <p class="resume-subline">(Self Project) | <a href="https://github.com/yashsolanki1166/Solar_power_predictor" target="_blank" rel="noopener noreferrer">Github Link</a></p>
+        <ul class="resume-list">
+          <li>Designed and developed a custom TensorFlow Lite machine learning model to predict approximate solar power output based on geographic coordinates (latitude and longitude), aiding in the optimal placement of solar cells.</li>
+          <li>Integrated an open-source weather API to extract forecast parameters, and leveraged GitHub Copilot to assist in model development, design the data pipeline, and optimize overall performance.</li>
+          <li>Utilized Edge Impulse Studio for training, testing, and score evaluation, achieving a model accuracy of 94.2% and a validation loss of 0.023, before deploying the live predictor tool via WebAssembly on GitHub Pages.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="resume-section two-col">
+      <div>
+        <h2 class="resume-title">TECHNICAL SKILLS</h2>
+        <ul class="resume-list">
+          <li><strong>Programming Languages:</strong> Python, C/C++, Verilog, RISC-V Assembly.</li>
+          <li><strong>Developer Tools and IDEs:</strong> Visual Studio Code, Github, Edge Impulse Studio, Keil-MDK, Vivado Design Suite, Cadence Virtuoso.</li>
+          <li><strong>Libraries:</strong> Numpy, Pandas, Scikit-learn.</li>
+          <li><strong>Certifications:</strong> <a href="https://drive.google.com/file/d/1vTpJTAJp4rocr5p51_iWa1RAUxQVrdfA/view" target="_blank" rel="noopener noreferrer">Kaggle's Intro to Machine Learning</a>, <a href="https://certificates.simplicdn.net/share/8395109_86526061748343813333.png" target="_blank" rel="noopener noreferrer">Simplilearn's Image Recognition using Machine-Learning</a>.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="resume-title">RELEVANT COURSEWORK</h2>
+        <ul class="resume-list">
+          <li>Probability, Statistics and Data Visualization</li>
+          <li>Data-Centric Computing</li>
+          <li>Numerical Methods</li>
+        </ul>
+
+        <h2 class="resume-title" style="margin-top: 16px;">POSITIONS OF RESPONSIBILITY</h2>
+        <div class="resume-project">
+          <div class="resume-project-head">
+            <div class="resume-project-name">Event Executive, TEDx IIT Gandhinagar</div>
+            <div class="resume-project-meta">[Sep'24 -- Mar'25]</div>
+          </div>
+          <ul class="resume-list">
+            <li>Coordinated with a cross-functional team in planning, organizing, and executing TEDx events on campus during the first year of undergraduate study.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
